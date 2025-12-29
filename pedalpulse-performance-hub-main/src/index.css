@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PedalPulse Premium Design System
+   All colors are HSL for consistency
+*/
+
+@layer base {
+  :root {
+    /* Primary Brand Colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    /* Surface Colors */
+    --surface: 0 0% 100%;
+    --surface-warm: 0 0% 97%;
+
+    /* Primary Action - Energetic Orange */
+    --primary: 18 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 0 0% 10%;
+
+    /* Secondary - Warm White */
+    --secondary: 0 0% 97%;
+    --secondary-foreground: 0 0% 10%;
+
+    /* Accent Cool - Deep Teal */
+    --accent: 200 38% 29%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Accent Warm - Golden Energy */
+    --accent-warm: 38 100% 65%;
+    --accent-warm-foreground: 0 0% 10%;
+
+    /* Text Colors */
+    --text-primary: 0 0% 10%;
+    --text-secondary: 0 0% 42%;
+    --text-muted: 0 0% 58%;
+
+    /* Muted */
+    --muted: 0 0% 97%;
+    --muted-foreground: 0 0% 42%;
+
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    /* Borders & Inputs */
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 18 100% 60%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Semantic Colors */
+    --success: 145 63% 49%;
+    --warning: 36 100% 50%;
+
+    /* Radius */
+    --radius: 0.5rem;
+
+    /* Sidebar (keeping for compatibility) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 0 0% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 91%;
+    --sidebar-ring: 18 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer utilities {
+
+  /* Premium transition timing */
+  .transition-premium {
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+
+  /* Golden ratio spacing */
+  .section-padding {
+    @apply py-20 md:py-24 lg:py-32;
+  }
+
+  /* Container max width - Centered with breathing room */
+  .container-premium {
+    @apply max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 xl:px-32;
+  }
+
+  /* Advanced Glassmorphism */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10 shadow-xl;
+  }
+
+  .glass-card {
+    @apply bg-white/50 backdrop-blur-lg border border-white/40 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  /* Focus state for accessibility */
+  .focus-premium {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  /* Link underline animation */
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-bottom-right scale-x-0 transition-transform duration-300 ease-out;
+  }
+
+  .link-underline:hover::after {
+    @apply origin-bottom-left scale-x-100;
+  }
+
+  /* Premium card shadow with colored bloom */
+  .shadow-premium {
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0,0,0,0.02);
+  }
+
+  .shadow-premium-hover {
+    box-shadow: 0 20px 40px -4px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0,0,0,0.02);
+  }
+
+  /* Gradient text - Animateable? No, but styled beautifully */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent-warm to-primary bg-[length:200%_auto] animate-gradient;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full hover:bg-muted-foreground/50 transition-colors;
+  }
+
+  /* Selection Color */
+  ::selection {
+    @apply bg-primary/20 text-primary-dark;
+  }
+}
+
+@layer utilities {
+  .animate-gradient {
+    animation: gradient 8s linear infinite;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
