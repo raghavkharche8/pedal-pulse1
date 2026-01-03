@@ -434,15 +434,24 @@ const PremiumRegistration = () => {
 
                     // ⭐ Send confirmation email
                     try {
+                        // Get total registration count
+                        const { count } = await supabase
+                            .from('premium_registrations')
+                            .select('*', { count: 'exact', head: true });
+
                         const { error: emailError } = await supabase.functions.invoke('send-registration-email', {
                             body: {
                                 to: formData.email.toLowerCase().trim(),
                                 name: formData.name.trim(),
+                                email: formData.email.toLowerCase().trim(),
                                 challengeName: 'Republic Day Virtual Challenge 2026',
                                 registrationType: 'premium',
                                 category: formData.category,
                                 paymentId: response.razorpay_payment_id,
                                 orderId: response.razorpay_order_id,
+                                amount: totalAmount,
+                                registrationTime: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+                                totalRegistrations: count || 0,
                                 address: {
                                     addressLine1: formData.addressLine1.trim(),
                                     addressLine2: formData.addressLine2.trim(),
@@ -451,7 +460,8 @@ const PremiumRegistration = () => {
                                     pincode: formData.pincode.trim()
                                 },
                                 phone: formData.phone.trim(),
-                                phoneCountryCode: formData.countryCode
+                                phoneCountryCode: formData.countryCode,
+                                sendAdminNotification: true
                             }
                         });
 
