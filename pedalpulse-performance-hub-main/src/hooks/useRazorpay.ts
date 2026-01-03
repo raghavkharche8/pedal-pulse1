@@ -21,7 +21,7 @@ declare global {
 }
 
 export const useRazorpay = () => {
-    const RAZORPAY_KEY = 'rzp_live_R8gZv2A5epuJef';
+    const RAZORPAY_KEY = import.meta.env.VITE_RAZORPAY_KEY_ID || '';
 
     const initiatePayment = useCallback((
         options: PaymentOptions,

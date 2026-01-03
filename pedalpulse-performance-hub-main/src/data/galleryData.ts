@@ -68,7 +68,7 @@ export const galleryImages: GalleryImage[] = [
         time: '2h 34m',
         location: 'Mumbai, India',
         challenge: 'Republic Day 2026',
-        challengeDate: '20-26 January 2026',
+        challengeDate: '26 Jan - 1 Feb 2026',
         aspectRatio: 'portrait',
     },
     {
@@ -92,7 +92,7 @@ export const galleryImages: GalleryImage[] = [
         time: '5h 45m',
         location: 'Bangalore, India',
         challenge: 'Republic Day 2026',
-        challengeDate: '20-26 January 2026',
+        challengeDate: '26 Jan - 1 Feb 2026',
         aspectRatio: 'landscape',
     },
     {
@@ -140,7 +140,7 @@ export const galleryImages: GalleryImage[] = [
         time: '2h 50m',
         location: 'Kochi, India',
         challenge: 'Republic Day 2026',
-        challengeDate: '20-26 January 2026',
+        challengeDate: '26 Jan - 1 Feb 2026',
         aspectRatio: 'portrait',
     },
     {
@@ -176,7 +176,7 @@ export const galleryImages: GalleryImage[] = [
         time: '1h 02m',
         location: 'Jaipur, India',
         challenge: 'Republic Day 2026',
-        challengeDate: '20-26 January 2026',
+        challengeDate: '26 Jan - 1 Feb 2026',
         aspectRatio: 'portrait',
     },
     {
@@ -212,7 +212,7 @@ export const galleryImages: GalleryImage[] = [
         time: '2h 45m',
         location: 'Ahmedabad, India',
         challenge: 'Republic Day 2026',
-        challengeDate: '20-26 January 2026',
+        challengeDate: '26 Jan - 1 Feb 2026',
         aspectRatio: 'portrait',
     },
     {
@@ -248,7 +248,7 @@ export const galleryImages: GalleryImage[] = [
         time: '2h 25m',
         location: 'Salem, India',
         challenge: 'Republic Day 2026',
-        challengeDate: '20-26 January 2026',
+        challengeDate: '26 Jan - 1 Feb 2026',
         aspectRatio: 'portrait',
     },
     {
@@ -284,7 +284,7 @@ export const galleryImages: GalleryImage[] = [
         time: '2h 55m',
         location: 'Indore, India',
         challenge: 'Republic Day 2026',
-        challengeDate: '20-26 January 2026',
+        challengeDate: '26 Jan - 1 Feb 2026',
         aspectRatio: 'portrait',
     },
     {
@@ -320,7 +320,7 @@ export const galleryImages: GalleryImage[] = [
         time: '2h 10m',
         location: 'Patna, India',
         challenge: 'Republic Day 2026',
-        challengeDate: '20-26 January 2026',
+        challengeDate: '26 Jan - 1 Feb 2026',
         aspectRatio: 'landscape',
     },
     {
@@ -356,7 +356,7 @@ export const galleryImages: GalleryImage[] = [
         time: '4h 15m',
         location: 'Dehradun, India',
         challenge: 'Republic Day 2026',
-        challengeDate: '20-26 January 2026',
+        challengeDate: '26 Jan - 1 Feb 2026',
         aspectRatio: 'portrait',
     },
     {
@@ -392,7 +392,7 @@ export const galleryImages: GalleryImage[] = [
         time: '1h 40m',
         location: 'Varanasi, India',
         challenge: 'Republic Day 2026',
-        challengeDate: '20-26 January 2026',
+        challengeDate: '26 Jan - 1 Feb 2026',
         aspectRatio: 'portrait',
     },
     {
@@ -428,7 +428,7 @@ export const galleryImages: GalleryImage[] = [
         time: '1h 18m',
         location: 'Jodhpur, India',
         challenge: 'Republic Day 2026',
-        challengeDate: '20-26 January 2026',
+        challengeDate: '26 Jan - 1 Feb 2026',
         aspectRatio: 'landscape',
     },
     {

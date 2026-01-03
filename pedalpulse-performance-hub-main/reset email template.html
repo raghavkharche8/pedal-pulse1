@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Your Password</title>
+    <!--[if mso]>
+    <style>
+        table {border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;}
+        td {padding: 0;}
+    </style>
+    <![endif]-->
+    <style>
+        /* Reset Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            background-color: #f8fafc;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        table,
+        td {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+        }
+
+        /* Interactive Styles */
+        .btn:hover {
+            background-color: #e85a2d !important;
+            opacity: 0.9;
+        }
+
+        /* Mobile Styles */
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .content-padding {
+                padding: 20px 15px !important;
+            }
+
+            .header-padding {
+                padding: 30px 20px !important;
+            }
+
+            .heading {
+                font-size: 24px !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin: 0; padding: 0; background-color: #f8fafc;">
+
+    <!-- Preview Text -->
+    <div style="display: none; max-height: 0px; overflow: hidden;">
+        Reset your PedalPulse password to regain access to your dashboard.
+    </div>
+
+    <!-- Main Container -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f8fafc;">
+        <tr>
+            <td align="center" style="padding: 40px 0;">
+
+                <!-- Email Wrapper -->
+                <table border="0" cellpadding="0" cellspacing="0" width="600" class="container"
+                    style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
+
+                    <!-- Orange Header Strip -->
+                    <tr>
+                        <td height="6" style="background: linear-gradient(90deg, #FF6B35 0%, #FF9F43 100%);"></td>
+                    </tr>
+
+                    <!-- Header Section -->
+                    <tr>
+                        <td align="center" class="header-padding" style="padding: 40px 40px 20px 40px;">
+                            <!-- Logo Placeholder - Replace src with your actual hosted logo URL -->
+                            <img src="https://pedalpulse.in/logo.png" alt="PedalPulse Logo" width="160"
+                                style="display: block; width: 160px; max-width: 100%; height: auto;">
+                        </td>
+                    </tr>
+
+                    <!-- Body Content -->
+                    <tr>
+                        <td class="content-padding" style="padding: 20px 50px 40px 50px;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="center">
+                                        <h1 class="heading"
+                                            style="margin: 0 0 20px 0; color: #1e293b; font-size: 28px; font-weight: 700; line-height: 1.3;">
+                                            Reset Password
+                                        </h1>
+                                        <p
+                                            style="margin: 0 0 30px 0; color: #64748b; font-size: 16px; line-height: 1.6;">
+                                            We received a request to reset your password for your
+                                            <strong>PedalPulse</strong> account.<br>
+                                            Click the button below to choose a new password.
+                                        </p>
+                                    </td>
+                                </tr>
+
+                                <!-- CTA Button -->
+                                <tr>
+                                    <td align="center" style="padding: 10px 0 40px 0;">
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="center" style="border-radius: 50px;" bgcolor="#FF6B35">
+                                                    <a href="{{ .ConfirmationURL }}" target="_blank" class="btn"
+                                                        style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; border-radius: 50px; padding: 15px 35px; border: 1px solid #FF6B35; display: inline-block; font-weight: bold; background: linear-gradient(90deg, #FF6B35 0%, #FF8F35 100%); box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);">
+                                                        Reset Password
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- Info Box -->
+                                <tr>
+                                    <td
+                                        style="background-color: #fff7ed; border-radius: 8px; padding: 20px; border: 1px solid #ffedd5;">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td style="text-align: center;">
+                                                    <p
+                                                        style="margin: 0; color: #9a3412; font-size: 14px; line-height: 1.5;">
+                                                        <strong>Didn't request this?</strong><br>
+                                                        If you didn't ask to reset your password, it's safe to ignore
+                                                        this email. Your password will remain unchanged.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- Divider -->
+                                <tr>
+                                    <td style="padding-top: 40px;">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td height="1" style="background-color: #e2e8f0; line-height: 1px;">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- Alt Link -->
+                                <tr>
+                                    <td align="center" style="padding-top: 30px;">
+                                        <p style="margin: 0; color: #94a3b8; font-size: 12px; line-height: 1.5;">
+                                            Button not working? Copy and paste the link below into your browser:<br>
+                                            <a href="{{ .ConfirmationURL }}"
+                                                style="color: #FF6B35; text-decoration: underline; word-break: break-all;">
+                                                {{ .ConfirmationURL }}
+                                            </a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td bgcolor="#f1f5f9" style="padding: 30px 40px;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="center">
+                                        <p
+                                            style="margin: 0 0 10px 0; color: #64748b; font-size: 12px; font-weight: bold;">
+                                            PEDAL PULSE PERFORMANCE HUB
+                                        </p>
+                                        <p style="margin: 0 0 10px 0; color: #94a3b8; font-size: 12px;">
+                                            Igniting the spirit of endurance.
+                                        </p>
+                                        <p style="margin: 0; color: #94a3b8; font-size: 12px;">
+                                            &copy; 2026 PedalPulse. All rights reserved.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+                <!-- End Email Wrapper -->
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

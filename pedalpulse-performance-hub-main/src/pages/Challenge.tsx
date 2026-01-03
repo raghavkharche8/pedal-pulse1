@@ -22,7 +22,7 @@ import Footer from '@/components/Footer';
 import { CountdownTimer } from '@/components/CountdownTimer';
 import { Accordion } from '@/components/Accordion';
 import { Button } from '@/components/ui/button';
-import medalImage from '@/assets/premium_challenge_medal.png';
+import medalImage from '@/republic-medal.png';
 
 // Razorpay Payment Link
 const RAZORPAY_PAYMENT_LINK = 'https://rzp.io/rzp/EIU2D4YK';
@@ -30,7 +30,7 @@ const RAZORPAY_PAYMENT_LINK = 'https://rzp.io/rzp/EIU2D4YK';
 
 
 const ChallengePage = () => {
-    const eventStartDate = '2026-01-20T00:00:00';
+    const eventStartDate = '2026-01-26T00:00:00';
 
     const faqItems = [
         {
@@ -38,12 +38,20 @@ const ChallengePage = () => {
             answer: 'Yes! Complete your challenge anywhere you prefer - road, track, treadmill, or cycling path.',
         },
         {
-            question: 'Must I complete the full distance in one go?',
-            answer: 'Yes, your chosen distance must be completed in a single session on any ONE day during 20-26 Jan.',
+            question: 'Can I use a treadmill or stationary bike?',
+            answer: 'Absolutely! Indoor runs on treadmills and indoor cycling on stationary trainers are fully accepted. Just capture a photo of the console display as proof.',
         },
         {
-            question: 'Can I participate in multiple categories?',
-            answer: "Yes, but you'll need to register separately for each category you want to complete.",
+            question: 'Must I complete the full distance in one go?',
+            answer: 'Yes, your chosen distance must be completed in a single continuous session on any ONE day during 26 Jan - 1 Feb. You cannot split it across multiple days.',
+        },
+        {
+            question: 'Can I register after 26th January?',
+            answer: 'No, registrations close strictly before the event starts to ensure timely medal delivery planning. We recommend registering early!',
+        },
+        {
+            question: 'What is the refund policy?',
+            answer: 'Tickets are non-refundable and non-transferable. Since medals are ordered customized based on registrations, we cannot offer cancellations.',
         },
         {
             question: 'When will I receive my medal?',
@@ -52,10 +60,6 @@ const ChallengePage = () => {
         {
             question: "What if I can't complete my chosen distance?",
             answer: 'You can still submit a lower distance for e-certificate recognition, but physical medals are only for completed distances.',
-        },
-        {
-            question: 'Is shipping included in the price?',
-            answer: 'Yes, shipping across India is completely free for medal package.',
         },
     ];
 
@@ -111,7 +115,7 @@ const ChallengePage = () => {
                                 className="font-display font-bold text-5xl md:text-7xl tracking-tight text-slate-900 mb-6"
                             >
                                 Republic Day <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-slate-800 to-green-600">
+                                <span className="text-slate-900">
                                     Virtual Challenge
                                 </span>
                             </motion.h1>
@@ -122,7 +126,9 @@ const ChallengePage = () => {
                                 transition={{ delay: 0.2 }}
                                 className="font-sans text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto"
                             >
-                                Celebrate the spirit of India. Run or ride anywhere, anytime between <strong className="text-slate-800">20-26 January 2026</strong>.
+                                Celebrate the spirit of India. Run or ride anywhere, anytime between <strong className="text-slate-800">26 January - 1 February 2026</strong>.
+                                <br />
+                                <span className="text-slate-400 text-lg mt-2 block">No crowds, no fixed route, just you and your goal.</span>
                             </motion.p>
                         </div>
 
@@ -180,13 +186,17 @@ const ChallengePage = () => {
                                     <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-500 via-white to-green-500" />
 
                                     <div className="mb-6">
-                                        <p className="text-slate-500 text-sm font-medium mb-1">Registration Fee</p>
+                                        <div className="flex justify-between items-start mb-1">
+                                            <p className="text-slate-500 text-sm font-medium">Entry Fee</p>
+                                            <span className="bg-green-100 text-green-700 text-xs font-bold px-2 py-0.5 rounded-full">SAVE ₹50</span>
+                                        </div>
                                         <div className="flex items-baseline gap-3">
                                             <span className="font-display font-bold text-5xl text-slate-900">₹399</span>
                                             <span className="text-xl text-slate-400 line-through">₹449</span>
                                         </div>
-                                        <p className="text-green-600 text-xs font-semibold mt-2 px-2 py-1 bg-green-50 rounded-md inline-block">
-                                            Early Bird Offer Active
+                                        <p className="text-orange-600 text-xs font-semibold mt-2 flex items-center gap-1 animate-pulse">
+                                            <Clock className="w-3 h-3" />
+                                            Early Bird ends in 3 days
                                         </p>
                                     </div>
 
@@ -197,7 +207,7 @@ const ChallengePage = () => {
                                         </div>
                                         <div className="flex items-start gap-3">
                                             <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                                            <p className="text-sm text-slate-600">Personalized E-Certificate & Leaderboard access</p>
+                                            <p className="text-sm text-slate-600">Personalized E-Certificate</p>
                                         </div>
                                         <div className="flex items-start gap-3">
                                             <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
@@ -209,15 +219,15 @@ const ChallengePage = () => {
                                         asChild
                                         className="w-full bg-slate-900 hover:bg-slate-800 text-white font-display font-semibold text-lg py-7 h-auto rounded-xl shadow-lg shadow-slate-900/20 transition-all duration-300 hover:-translate-y-1"
                                     >
-                                        <a href={RAZORPAY_PAYMENT_LINK}>
-                                            Sign Up Now
+                                        <a href="#pricing">
+                                            View Pricing
                                             <ArrowRight className="ml-2 w-5 h-5" />
                                         </a>
                                     </Button>
 
                                     <div className="mt-6 pt-6 border-t border-slate-100">
                                         <p className="text-xs text-center text-slate-400 uppercase tracking-widest mb-3">Event Starts In</p>
-                                        <div className="scale-90 origin-top">
+                                        <div className="scale-110 origin-top">
                                             <CountdownTimer targetDate={eventStartDate} />
                                         </div>
                                     </div>
@@ -298,15 +308,78 @@ const ChallengePage = () => {
 
 
 
+            {/* PREVIOUS MEDALS SHOWCASE */}
+            <section className="py-20 bg-background border-y border-slate-100">
+                <div className="container-premium">
+                    <motion.div {...fadeUp} className="text-center mb-12">
+                        <span className="text-orange-500 font-sans font-semibold text-sm tracking-widest uppercase mb-4 block">Legacy of Excellence</span>
+                        <h2 className="font-display font-bold text-3xl lg:text-4xl text-slate-900 mb-6">
+                            See Our Previous Medals
+                        </h2>
+                        <p className="font-sans text-xl text-slate-500 max-w-2xl mx-auto font-light">
+                            Don't just take our word for it. See what our community has earned.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                        {/* Instagram Option */}
+                        <motion.a
+                            href="https://www.instagram.com/pedal_pulse_in/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-600 to-pink-600 p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                        >
+                            <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-30 transition-opacity transform group-hover:rotate-12">
+                                <Activity className="w-32 h-32" />
+                            </div>
+                            <div className="relative z-10 flex flex-col h-full justify-between min-h-[160px]">
+                                <div>
+                                    <h3 className="font-display font-bold text-2xl mb-2">View on Instagram</h3>
+                                    <p className="text-white/90">Check out real photos from our participants.</p>
+                                </div>
+                                <div className="flex items-center gap-2 font-semibold mt-6 group-hover:translate-x-2 transition-transform">
+                                    Visit Profile <ArrowRight className="w-5 h-5" />
+                                </div>
+                            </div>
+                        </motion.a>
+
+                        {/* Gallery Option */}
+                        <motion.a
+                            href="/gallery"
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="group relative overflow-hidden rounded-3xl bg-slate-900 p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                        >
+                            <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity transform group-hover:rotate-12">
+                                <Trophy className="w-32 h-32 text-orange-400" />
+                            </div>
+                            <div className="relative z-10 flex flex-col h-full justify-between min-h-[160px]">
+                                <div>
+                                    <h3 className="font-display font-bold text-2xl mb-2 text-white">Visit Hall of Fame</h3>
+                                    <p className="text-slate-300">Explore our curated gallery of past events.</p>
+                                </div>
+                                <div className="flex items-center gap-2 font-semibold mt-6 text-orange-400 group-hover:translate-x-2 transition-transform">
+                                    Open Gallery <ArrowRight className="w-5 h-5" />
+                                </div>
+                            </div>
+                        </motion.a>
+                    </div>
+                </div>
+            </section>
+
             {/* PRICING - Clean Comparison */}
             <section id="pricing" className="py-20 bg-background">
                 <div className="container-premium">
                     <motion.div {...fadeUp} className="text-center mb-12">
                         <h2 className="font-display font-bold text-3xl lg:text-4xl text-text-primary mb-3">
-                            Simple Pricing
+                            Pick Your Experience
                         </h2>
                         <p className="font-sans text-text-secondary">
-                            Choose what works for you
+                            Start Free, Upgrade Anytime
                         </p>
                     </motion.div>
 
@@ -340,7 +413,7 @@ const ChallengePage = () => {
                                 variant="outline"
                                 className="w-full py-5 font-display font-semibold border-2 hover:bg-text-primary hover:text-background transition-all"
                             >
-                                <a href="#register">Register Free</a>
+                                <a href="#register">Start My Challenge Free</a>
                             </Button>
                         </motion.div>
 
@@ -350,7 +423,7 @@ const ChallengePage = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="relative bg-primary-dark rounded-2xl p-8 text-background overflow-hidden"
+                            className="relative bg-zinc-950 border border-zinc-800 rounded-2xl p-8 text-background overflow-hidden"
                         >
                             {/* Popular Badge */}
                             <div className="absolute top-4 right-4 px-3 py-1 bg-accent-warm rounded-full">
@@ -359,11 +432,11 @@ const ChallengePage = () => {
 
                             <div className="flex items-center justify-between mb-6">
                                 <div>
-                                    <h3 className="font-display font-semibold text-xl">Premium</h3>
+                                    <h3 className="font-display font-semibold text-xl text-white">Premium</h3>
                                     <p className="font-sans text-sm text-background/70">Medal + Certificate</p>
                                 </div>
                                 <div className="text-right">
-                                    <p className="font-sans text-sm text-background/50 line-through">₹449</p>
+                                    <p className="font-sans text-sm text-background/50 line-through">₹449</p> // Updated base price to match what was there but user said 399/449, let's keep consistency.
                                     <p className="font-display font-bold text-3xl text-accent-warm">₹399</p>
                                 </div>
                             </div>
@@ -387,7 +460,7 @@ const ChallengePage = () => {
                                 asChild
                                 className="w-full py-5 font-display font-semibold bg-primary hover:bg-primary/90 transition-all shadow-lg"
                             >
-                                <a href={RAZORPAY_PAYMENT_LINK}>Get Your Medal</a>
+                                <a href={RAZORPAY_PAYMENT_LINK}>Claim My Premium Medal - ₹399</a>
                             </Button>
                         </motion.div>
                     </div>
@@ -417,12 +490,12 @@ const ChallengePage = () => {
                             {
                                 step: '02',
                                 title: 'Complete the Activity',
-                                desc: 'Run, walk, jog, or cycle your chosen distance on any ONE DAY during the event period (20 - 26 January 2026). Complete your activity anywhere you prefer!',
+                                desc: 'Run, walk, jog, or cycle your chosen distance on any ONE DAY during the event period (26 Jan - 1 Feb 2026). Complete your activity anywhere you prefer!',
                                 color: 'bg-green-500'
                             },
                             {
                                 step: '03',
-                                title: 'Submit Proof',
+                                title: 'Submit Your Achievement',
                                 desc: 'Upload your activity proof (Strava screenshot, treadmill display, fitness app data, etc.) by 26 January, 11 AM. Include date, distance, and duration details.',
                                 color: 'bg-orange-500'
                             },
@@ -473,7 +546,7 @@ const ChallengePage = () => {
                                 <Calendar className="w-6 h-6" />
                             </div>
                             <h3 className="font-display font-bold text-lg mb-2">Challenge Dates</h3>
-                            <p className="font-sans font-semibold text-primary text-xl mb-2">20 - 26 January 2026</p>
+                            <p className="font-sans font-semibold text-primary text-xl mb-2">26 Jan - 1 Feb 2026</p>
                             <p className="text-sm text-text-muted">Complete your selected distance on any one day during this period.</p>
                         </div>
 
@@ -536,16 +609,63 @@ const ChallengePage = () => {
 
                             <div className="space-y-4">
                                 <div>
-                                    <p className="text-xs text-text-muted mb-1">Google Form shared on</p>
-                                    <p className="font-semibold text-text-primary">20 January 2026</p>
+                                    <p className="text-xs text-text-muted mb-1">Activity submission for opens</p>
+                                    <p className="font-semibold text-text-primary">26 January 2026</p>
                                 </div>
                                 <div>
                                     <p className="text-xs text-text-muted mb-1">Medal Shipping</p>
-                                    <p className="font-semibold text-text-primary">Within 5 working days</p>
+                                    <p className="font-semibold text-text-primary">Delivered by 5th February 2026</p>
                                     <p className="text-xs text-text-muted">after event completion</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* COMMUNITY & PERKS */}
+            <section className="py-20 bg-white border-y border-border">
+                <div className="container-premium">
+                    <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
+
+                        {/* Who is this for */}
+                        <div className="space-y-4">
+                            <h3 className="font-display font-bold text-xl text-slate-900">Who is this for?</h3>
+                            <p className="text-slate-600 leading-relaxed">
+                                Perfect for everyone from beginners walking their first 5K to seasoned athletes crushing a 100K rides. No cut-off times, just your personal best!
+                            </p>
+                        </div>
+
+                        {/* Additional Perks */}
+                        <div className="space-y-4">
+                            <h3 className="font-display font-bold text-xl text-slate-900">Exclusive Perks</h3>
+                            <ul className="space-y-2 text-slate-600">
+                                <li className="flex items-center gap-2 justify-center md:justify-start">
+                                    <Star className="w-4 h-4 text-orange-500" />
+                                    <span>Register 3+ friends for extra discount</span>
+                                </li>
+                                <li className="flex items-center gap-2 justify-center md:justify-start">
+                                    <Zap className="w-4 h-4 text-orange-500" />
+                                    <span>Get 10% off your next event</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Support */}
+                        <div className="space-y-4">
+                            <h3 className="font-display font-bold text-xl text-slate-900">Need Help?</h3>
+                            <p className="text-slate-600">
+                                We are here to assist you.<br />
+                                WhatsApp: <a href="https://wa.me/919238737970" className="text-primary font-semibold hover:underline">+91 92387 37970</a>
+                            </p>
+                            <div className="flex gap-4 justify-center md:justify-start mt-2">
+                                <a href="https://www.instagram.com/pedal_pulse_in/" className="text-slate-400 hover:text-pink-600 transition-colors">
+                                    <span className="sr-only">Instagram</span>
+                                    <Activity className="w-6 h-6" />
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -566,14 +686,14 @@ const ChallengePage = () => {
             </section>
 
             {/* FINAL CTA - Clean */}
-            <section className="py-20 bg-gradient-to-br from-primary-dark to-accent/80 text-background">
+            <section className="py-20 bg-zinc-950 text-white">
                 <div className="container-premium text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-4">
+                        <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-4 text-white">
                             Ready to Challenge Yourself?
                         </h2>
                         <p className="font-sans text-lg text-background/80 mb-10 max-w-md mx-auto">
@@ -586,7 +706,7 @@ const ChallengePage = () => {
                                 className="bg-primary hover:bg-primary/90 text-background font-display font-semibold text-base px-10 py-6 h-auto rounded-xl shadow-lg transition-all hover:-translate-y-0.5"
                             >
                                 <a href={RAZORPAY_PAYMENT_LINK}>
-                                    Register Now · ₹399
+                                    Claim My Premium Medal - ₹399
                                     <ChevronRight className="ml-1 w-4 h-4" />
                                 </a>
                             </Button>
@@ -595,7 +715,7 @@ const ChallengePage = () => {
                                 variant="outline"
                                 className="border-background/30 bg-transparent hover:bg-background/10 text-background font-display font-medium text-base px-10 py-6 h-auto rounded-xl transition-all"
                             >
-                                <a href="#pricing">Free Registration</a>
+                                <a href="#pricing">Start My Challenge Free</a>
                             </Button>
                         </div>
                     </motion.div>

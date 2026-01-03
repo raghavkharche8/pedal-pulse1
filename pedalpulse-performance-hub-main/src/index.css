@@ -3,78 +3,105 @@
 @tailwind utilities;
 
 /* PedalPulse Premium Design System
-   All colors are HSL for consistency
+   Refined for a Luxury Performance Aesthetic
 */
 
 @layer base {
   :root {
-    /* Primary Brand Colors */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    /* Primary Brand Colors - Refined */
+    /* Vibrant but sophisticated Energetic Orange */
+    --primary: 16 90% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 16 80% 20%;
+    --primary-light: 16 90% 96%;
+
+    /* Backgrounds - Moving away from pure white for richness */
+    --background: 210 20% 99%;
+    /* Very subtle cool white */
+    --foreground: 222 47% 11%;
+    /* Deep Navy Charcoal instead of Black */
 
     /* Surface Colors */
     --surface: 0 0% 100%;
-    --surface-warm: 0 0% 97%;
+    --surface-warm: 30 20% 98%;
 
-    /* Primary Action - Energetic Orange */
-    --primary: 18 100% 60%;
-    --primary-foreground: 0 0% 100%;
-    --primary-dark: 0 0% 10%;
+    /* Secondary - Titanium / Silver vibe */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    /* Secondary - Warm White */
-    --secondary: 0 0% 97%;
-    --secondary-foreground: 0 0% 10%;
-
-    /* Accent Cool - Deep Teal */
-    --accent: 200 38% 29%;
+    /* Accent Cool - Electric Blue / Deep Teal */
+    --accent: 199 89% 48%;
+    /* Brighter, more active */
     --accent-foreground: 0 0% 100%;
 
-    /* Accent Warm - Golden Energy */
-    --accent-warm: 38 100% 65%;
-    --accent-warm-foreground: 0 0% 10%;
+    /* Accent Warm - Gold / Trophy */
+    --accent-warm: 43 96% 56%;
+    --accent-warm-foreground: 20 20% 10%;
 
-    /* Text Colors */
-    --text-primary: 0 0% 10%;
-    --text-secondary: 0 0% 42%;
-    --text-muted: 0 0% 58%;
+    /* Text Colors - Hierarchy */
+    --text-primary: 222 47% 11%;
+    --text-secondary: 215 16% 40%;
+    --text-muted: 215 16% 60%;
 
     /* Muted */
-    --muted: 0 0% 97%;
-    --muted-foreground: 0 0% 42%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
 
     /* Card */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 222 47% 11%;
 
     /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 222 47% 11%;
 
     /* Borders & Inputs */
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 18 100% 60%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 16 90% 55%;
 
     /* Destructive */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     /* Semantic Colors */
-    --success: 145 63% 49%;
+    --success: 142 71% 45%;
     --warning: 36 100% 50%;
 
-    /* Radius */
-    --radius: 0.5rem;
+    /* Radius - Slightly more rounded for modern feel */
+    --radius: 0.75rem;
 
-    /* Sidebar (keeping for compatibility) */
+    /* Sidebar Legacy Support */
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 0 0% 10%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 0 0% 96%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 0 0% 91%;
-    --sidebar-ring: 18 100% 60%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 20% 98%;
+    --card: 222 47% 14%;
+    --card-foreground: 210 20% 98%;
+    --popover: 222 47% 14%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 16 90% 60%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217 20% 20%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 20% 20%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 199 89% 55%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 20% 20%;
+    --input: 217 20% 20%;
+    --ring: 16 90% 60%;
   }
 }
 
@@ -85,11 +112,15 @@
 
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
   }
 
   h1,
@@ -99,99 +130,187 @@
   h5,
   h6 {
     font-family: 'Poppins', sans-serif;
+    @apply tracking-tight text-text-primary;
   }
 }
 
 @layer utilities {
 
-  /* Premium transition timing */
-  .transition-premium {
-    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+  /* --- Premium Animations & Transitions --- */
+  .ease-premium {
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.0);
+    /* Ease Out Sine-ish */
   }
 
-  /* Golden ratio spacing */
+  .ease-spring {
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  /* --- Spacing --- */
   .section-padding {
-    @apply py-20 md:py-24 lg:py-32;
+    @apply py-24 md:py-32 lg:py-40;
   }
 
-  /* Container max width - Centered with breathing room */
   .container-premium {
-    @apply max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 xl:px-32;
+    @apply max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20;
   }
 
-  /* Advanced Glassmorphism */
+  /* --- Glassmorphism 2.0 --- */
   .glass {
-    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-lg;
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-xl shadow-black/5;
   }
 
   .glass-dark {
-    @apply bg-black/40 backdrop-blur-xl border border-white/10 shadow-xl;
+    @apply bg-black/60 backdrop-blur-xl border border-white/5 shadow-2xl shadow-black/20;
   }
 
   .glass-card {
-    @apply bg-white/50 backdrop-blur-lg border border-white/40 shadow-sm hover:shadow-md transition-all duration-300;
+    @apply bg-white/60 backdrop-blur-md border border-white/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 ease-out;
   }
 
-  /* Focus state for accessibility */
+  .glass-panel {
+    @apply bg-gradient-to-br from-white/90 to-white/50 backdrop-blur-2xl border border-white/60 shadow-2xl shadow-slate-200/50;
+  }
+
+  /* --- Premium Inputs --- */
   .focus-premium {
-    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-0 transition-all duration-300;
   }
 
-  /* Link underline animation */
-  .link-underline {
-    @apply relative inline-block;
+  /* --- Text Effects --- */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-orange-500 to-accent-warm bg-[length:200%_auto] animate-gradient font-bold;
   }
 
-  .link-underline::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-bottom-right scale-x-0 transition-transform duration-300 ease-out;
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   }
 
-  .link-underline:hover::after {
-    @apply origin-bottom-left scale-x-100;
+  .text-glow {
+    text-shadow: 0 0 20px rgba(var(--primary), 0.5);
   }
 
-  /* Premium card shadow with colored bloom */
+  /* --- Shadows --- */
   .shadow-premium {
-    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0,0,0,0.02);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.03);
   }
 
   .shadow-premium-hover {
-    box-shadow: 0 20px 40px -4px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0,0,0,0.02);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15), 0 8px 12px -8px rgba(0, 0, 0, 0.08);
+    /* Lifted effect */
   }
 
-  /* Gradient text - Animateable? No, but styled beautifully */
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent-warm to-primary bg-[length:200%_auto] animate-gradient;
+  .shadow-glow {
+    box-shadow: 0 0 25px -5px rgba(249, 115, 22, 0.3);
+    /* Primary color glow */
   }
 
-  /* Custom Scrollbar */
+  /* --- Scrollbar --- */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
+    height: 6px;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-background;
+    @apply bg-transparent;
   }
 
   ::-webkit-scrollbar-thumb {
     @apply bg-muted-foreground/30 rounded-full hover:bg-muted-foreground/50 transition-colors;
   }
 
-  /* Selection Color */
+  /* --- Selection --- */
   ::selection {
-    @apply bg-primary/20 text-primary-dark;
+    @apply bg-primary/30 text-primary-dark;
   }
-}
 
-@layer utilities {
+  /* --- Animation Keyframes --- */
   .animate-gradient {
-    animation: gradient 8s linear infinite;
+    animation: gradient 6s ease infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
   }
 
   @keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  /* --- Mobile Touch Optimization --- */
+  @media (max-width: 768px) {
+
+    button,
+    a[role="button"],
+    [role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    input,
+    select,
+    textarea {
+      font-size: 16px !important;
+      /* Prevents zoom on iOS */
+    }
+  }
+
+  /* Better tap targets */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* iOS Safe Area Support */
+  .safe-area-inset-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Add bottom padding on mobile for sticky CTA */
+  @media (max-width: 1024px) {
+    body {
+      padding-bottom: 80px;
+      /* Height of sticky CTA bar */
+    }
   }
 }

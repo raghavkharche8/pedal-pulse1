@@ -36,7 +36,7 @@ const Index = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-white/90 font-sans font-medium text-xs tracking-[0.2em] uppercase mb-8 hover:bg-white/20 transition-colors cursor-default">
+                            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-slate-950 font-sans font-medium text-xs tracking-[0.2em] uppercase mb-8 hover:bg-white/40 transition-colors cursor-default border border-white/20">
                                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                                 Premium Virtual Challenges
                             </span>
@@ -55,7 +55,7 @@ const Index = () => {
 
                             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                                 <a
-                                    href="/challenge"
+                                    href="/challenges"
                                     className="group relative inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-sans font-semibold text-lg rounded-full overflow-hidden transition-transform active:scale-95 shadow-premium hover:shadow-premium-hover"
                                 >
                                     <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
@@ -63,7 +63,7 @@ const Index = () => {
                                 </a>
                                 <a
                                     href="/about"
-                                    className="px-8 py-4 rounded-full glass text-white font-sans font-semibold text-lg hover:bg-white/20 transition-all duration-300 backdrop-blur-md"
+                                    className="px-8 py-4 rounded-full glass text-slate-950 font-sans font-semibold text-lg hover:bg-white/40 transition-all duration-300 backdrop-blur-md border border-white/20"
                                 >
                                     Our Story
                                 </a>
@@ -86,27 +86,35 @@ const Index = () => {
                 <StatsSection />
                 <ChallengeSpotlight />
 
-                {/* Medal Showcase - Moved & Enhanced */}
-                <section className="py-24 bg-surface relative overflow-hidden">
-                    <div className="absolute inset-0 opacity-5 bg-[url('https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center" />
+                {/* Medal Showcase - Premium Dark Gallery Style */}
+                <section className="py-32 bg-foreground relative overflow-hidden">
+                    {/* Background Texture - Radial Gradient for Spotlight Effect */}
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 to-transparent opacity-40" />
+                    <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay" />
+
                     <div className="container-premium relative z-10 text-center">
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
+                            transition={{ duration: 0.8 }}
                         >
-                            <h2 className="font-display font-bold text-4xl md:text-5xl mb-6 text-text-primary">
+                            <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm text-accent-warm text-xs font-bold tracking-widest uppercase mb-6">
+                                Exclusive Rewards
+                            </span>
+                            <h2 className="font-display font-bold text-5xl md:text-6xl mb-8 text-white tracking-tight">
                                 The Finisher's Collection
                             </h2>
-                            <p className="font-sans text-xl text-text-secondary max-w-2xl mx-auto mb-10 font-light">
-                                More than just metal. Explore our gallery of premium, heavy-duty medals earned by athletes who engaged in the pursuit of greatness.
+                            <p className="font-sans text-xl text-white/70 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+                                More than just metal. Explore our gallery of premium, heavy-duty medals.
+                                Each one is a crafted symbol of the sweat, grit, and glory of your achievement.
                             </p>
                             <a
                                 href="/gallery"
-                                className="inline-flex items-center justify-center px-10 py-4 bg-primary text-white font-sans font-semibold text-lg rounded-full shadow-lg hover:shadow-primary/25 hover:-translate-y-1 transition-all duration-300"
+                                className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-foreground font-sans font-bold text-lg rounded-full shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:-translate-y-1 transition-all duration-300"
                             >
                                 Enter Hall of Fame
+                                <span className="group-hover:translate-x-1 transition-transform">→</span>
                             </a>
                         </motion.div>
                     </div>

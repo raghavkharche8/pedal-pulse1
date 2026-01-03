@@ -1,8 +1,15 @@
+# PedalPulse Robots.txt
+# Security: Prevents search engines from indexing sensitive paths
+
 User-agent: Googlebot
 Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
 
 User-agent: Twitterbot
 Allow: /
@@ -12,3 +19,12 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /admin/*
+Disallow: /dashboard/
+Disallow: /dashboard/*
+Disallow: /auth/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://pedalpulse.in/sitemap.xml

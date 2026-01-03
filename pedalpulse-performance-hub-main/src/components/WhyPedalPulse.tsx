@@ -31,9 +31,8 @@ const WhyPedalPulse = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="relative overflow-hidden section-padding">
-      {/* Dark Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary-dark to-accent" />
+    <section className="relative overflow-hidden section-padding bg-zinc-950">
+      {/* Dark Gradient Background Removed */}
 
       <div className="relative z-10 container-premium">
         {/* Section Header */}
@@ -56,18 +55,18 @@ const WhyPedalPulse = () => {
               key={feature.title}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ 
-                duration: 0.6, 
-                delay: 0.2 + index * 0.1, 
-                ease: [0.4, 0, 0.2, 1] 
+              transition={{
+                duration: 0.6,
+                delay: 0.2 + index * 0.1,
+                ease: [0.4, 0, 0.2, 1]
               }}
               className="group"
             >
               <div className="h-full p-8 lg:p-10 rounded-xl bg-primary-foreground/[0.08] backdrop-blur-xl border border-primary-foreground/[0.12] transition-all duration-300 ease-premium group-hover:border-primary/50 group-hover:bg-primary-foreground/[0.15] group-hover:-translate-y-1 group-hover:shadow-xl">
                 {/* Icon */}
-                <feature.icon 
-                  className="w-12 h-12 text-accent-warm" 
-                  strokeWidth={1.5} 
+                <feature.icon
+                  className="w-12 h-12 text-accent-warm"
+                  strokeWidth={1.5}
                 />
 
                 {/* Title */}
